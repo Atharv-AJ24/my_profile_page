@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    min-height: 100vh;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-card {
+    width: 400px;
+    background-color: white;
+    padding: 40px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.profile-icon {
+    font-size: 70px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #667eea;
+    margin-bottom: 5px;
+}
+
+.role {
+    color: #777;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.description {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+h3 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.skills {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 25px;
+}
+
+.skills span {
+    background-color: #667eea;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+button {
+    background-color: #667eea;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #764ba2;
+}
+
+#message {
+    color: #667eea;
+    font-weight: bold;
+    margin-top: 15px;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="profile-card">
+
+            <div class="profile-icon">👨‍💻</div>
+
+            <h1>My Profile</h1>
+
+            <h2>Ansh</h2>
+
+            <p class="role">DevOps Student</p>
+
+            <p class="description">
+                Hello! I am a student learning DevOps technologies.
+                I am currently learning Git, Jenkins, Docker,
+                Kubernetes and Grafana.
+            </p>
+
+            <h3>My Skills</h3>
+
+            <div class="skills">
+                <span>Git</span>
+                <span>Jenkins</span>
+                <span>Docker</span>
+                <span>Kubernetes</span>
+                <span>Grafana</span>
+            </div>
+
+            <button onclick="showMessage()">Contact Me</button>
+
+            <p id="message"></p>
+
+        </div>
+
+    </div>
+
+    <script>
+        function showMessage() {
+            document.getElementById("message").innerText =
+                "Thanks for visiting my profile!";
+        }
+    </script>
+
+</body>
+</html>
