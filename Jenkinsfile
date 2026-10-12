@@ -24,6 +24,7 @@ pipeline {
         }
 
         
+        
         stage('Check Kubernetes Config') {
             environment {
                 KUBECONFIG = 'C:\\Users\\Admin\\.kube\\config'
@@ -33,8 +34,10 @@ pipeline {
                 bat 'where kubectl'
                 bat 'kubectl config current-context'
                 bat 'kubectl config view --minify -o jsonpath="{.clusters[0].cluster.server}"'
+                bat 'kubectl get nodes --request-timeout=10s'
             }
         }
+
 
 
         stage('Deploy') {
