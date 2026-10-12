@@ -1,4 +1,3 @@
-
 pipeline {
     agent any
 
@@ -21,6 +20,15 @@ pipeline {
             steps {
                 echo 'Testing Docker image...'
                 bat 'docker image inspect my-profile-page:latest'
+            }
+        }
+
+        stage('Check Kubernetes Config') {
+            steps {
+                echo 'Checking Kubernetes configuration available to Jenkins...'
+                bat 'where kubectl'
+                bat 'kubectl config current-context'
+                bat 'kubectl config view --minify -o jsonpath="{.clusters[0].cluster.server}"'
             }
         }
 
