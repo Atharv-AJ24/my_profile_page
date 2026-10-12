@@ -1,8 +1,8 @@
+
 pipeline {
     agent any
 
     stages {
-
         stage('Checkout') {
             steps {
                 echo 'Getting project code...'
@@ -13,22 +13,23 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building Docker image...'
-                sh 'docker build -t my-profile-page:latest .'
+                bat 'docker build -t my-profile-page:latest .'
             }
         }
 
         stage('Test') {
             steps {
                 echo 'Testing Docker image...'
-                sh 'docker images my-profile-page:latest'
+                bat 'docker image inspect my-profile-page:latest'
             }
         }
 
         stage('Deploy') {
             steps {
                 echo 'Deploying application to Kubernetes...'
-                sh 'kubectl apply -f kubernetes/deployment.yaml'
-                sh 'kubectl apply -f kubernetes/service.yaml'
+                bat 'kubectl apply -f kubernetes/deployment.yaml'
+                bat 'kubectl apply -f kubernetes/service.yaml'
+                bat 'kubectl rollout status deployment/my-profile-page --timeout=120s'
             }
         }
     }
