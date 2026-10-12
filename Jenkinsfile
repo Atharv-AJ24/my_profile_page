@@ -23,7 +23,11 @@ pipeline {
             }
         }
 
+        
         stage('Check Kubernetes Config') {
+            environment {
+                KUBECONFIG = 'C:\\Users\\Admin\\.kube\\config'
+            }
             steps {
                 echo 'Checking Kubernetes configuration available to Jenkins...'
                 bat 'where kubectl'
@@ -31,6 +35,7 @@ pipeline {
                 bat 'kubectl config view --minify -o jsonpath="{.clusters[0].cluster.server}"'
             }
         }
+
 
         stage('Deploy') {
             steps {
