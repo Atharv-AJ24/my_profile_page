@@ -1,7 +1,13 @@
+
 pipeline {
     agent any
 
+    environment {
+        KUBECONFIG = 'C:\\Users\\Admin\\.kube\\config'
+    }
+
     stages {
+
         stage('Checkout') {
             steps {
                 echo 'Getting project code...'
@@ -25,10 +31,8 @@ pipeline {
 
         
         
+        
         stage('Check Kubernetes Config') {
-            environment {
-                KUBECONFIG = 'C:\\Users\\Admin\\.kube\\config'
-            }
             steps {
                 echo 'Checking Kubernetes configuration available to Jenkins...'
                 bat 'where kubectl'
@@ -37,6 +41,7 @@ pipeline {
                 bat 'kubectl get nodes --request-timeout=10s'
             }
         }
+
 
 
 
